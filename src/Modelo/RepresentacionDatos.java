@@ -14,23 +14,23 @@ public class RepresentacionDatos {
     public double conDecimalBits(double num, int dato1, int dato2) {
         double bytes = conDatoDecimalByte(num, dato1);
         double bits = byteBit(bytes);
-        return conByteBinario(bits, dato2);
+        return conByteDecimal(bits, dato2);
     }
     
     public double conBinarioBits(double num, int dato1, int dato2) {
         double bytes = conDatoBinarioByte(num, dato1);
         double bits = byteBit(bytes);
-        return conByteBinario(bits, dato2);
+        return conByteDecimal(bits, dato2);
     }
     
     public double conBitsDecimal(double num, int dato1, int dato2) {
-        double bits = conDatoBinarioByte(num, dato1);
+        double bits = conDatoDecimalByte(num, dato1);
         double bytes = bitByte(bits);
         return conByteDecimal(bytes, dato2);
     }
     
     public double conBitsBinario(double num, int dato1, int dato2) {
-        double bits = conDatoBinarioByte(num, dato1);
+        double bits = conDatoDecimalByte(num, dato1);
         double bytes = bitByte(bits);
         return conByteBinario(bytes, dato2);
     }
@@ -45,34 +45,74 @@ public class RepresentacionDatos {
         return conByteDecimal(bytes, dato2);
     }
     
+    public double conversionDecimal(double num, int dato1, int dato2) {
+        double res = num;
+        if (dato1 == dato2) return res;
+        if (dato1 > dato2) {
+            while (dato1 > dato2) {
+                res = res*1000;
+                dato1--;
+            }
+        }
+        if (dato1 < dato2) {
+            while (dato1 < dato2) {
+                res = res/1000;
+                dato1++;
+            }
+        }
+        return res;
+    }
+    
+    public double conversionBinaria(double num, int dato1, int dato2) {
+        double res = num;
+        if (dato1 == dato2) return res;
+        if (dato1 > dato2) {
+            while (dato1 > dato2) {
+                res = res*1024;
+                dato1--;
+            }
+        }
+        if (dato1 < dato2) {
+            while (dato1 < dato2) {
+                res = res/1024;
+                dato1++;
+            }
+        }
+        return res;
+    }
+    
     public double conByteDecimal(double num, int dato) {
-        double res = 0;
+        double res = num;
         while(dato>0) {
-            res = num/1000;
+            res = res/1000;
+            dato--;
         }
         return res;
     }
     
     public double conByteBinario(double num, int dato) {
-        double res = 0;
+        double res = num;
         while(dato>0) {
-            res = num/1024;
+            res = res/1024;
+            dato--;
         }
         return res;
     }
     
     public double conDatoDecimalByte(double num, int dato) {
-        double res = 0;
+        double res = num;
         while(dato>0) {
-            res = num*1000;
+            res = res*1000;
+            dato--;
         }
         return res;
     }
     
     public double conDatoBinarioByte(double num, int dato) {
-        double res = 0;
+        double res = num;
         while(dato>0) {
-            res = num*1024;
+            res = res*1024;
+            dato--;
         }
         return res;
     }
