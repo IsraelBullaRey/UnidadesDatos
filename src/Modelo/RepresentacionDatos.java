@@ -6,8 +6,8 @@ package Modelo;
 
 /**
  *
- * @author israelbr
- * @author joseluisjb  *
+ * @author 1152358 - Israel Bulla Rey
+ *         1152384 - Jose Luis Jiménez Bayona
  */
 public class RepresentacionDatos {
     
@@ -46,6 +46,8 @@ public class RepresentacionDatos {
     }
     
     public double conversionDecimal(double num, int dato1, int dato2) {
+        validacionDatos(dato1);
+        validacionDatos(dato2);
         double res = num;
         if (dato1 == dato2) return res;
         if (dato1 > dato2) {
@@ -64,6 +66,8 @@ public class RepresentacionDatos {
     }
     
     public double conversionBinaria(double num, int dato1, int dato2) {
+        validacionDatos(dato1);
+        validacionDatos(dato2);
         double res = num;
         if (dato1 == dato2) return res;
         if (dato1 > dato2) {
@@ -82,6 +86,7 @@ public class RepresentacionDatos {
     }
     
     public double conByteDecimal(double num, int dato) {
+        validacionDatos(dato);
         double res = num;
         while(dato>0) {
             res = res/1000;
@@ -91,6 +96,7 @@ public class RepresentacionDatos {
     }
     
     public double conByteBinario(double num, int dato) {
+        validacionDatos(dato);
         double res = num;
         while(dato>0) {
             res = res/1024;
@@ -100,6 +106,7 @@ public class RepresentacionDatos {
     }
     
     public double conDatoDecimalByte(double num, int dato) {
+        validacionDatos(dato);
         double res = num;
         while(dato>0) {
             res = res*1000;
@@ -109,6 +116,7 @@ public class RepresentacionDatos {
     }
     
     public double conDatoBinarioByte(double num, int dato) {
+        validacionDatos(dato);
         double res = num;
         while(dato>0) {
             res = res*1024;
@@ -117,11 +125,21 @@ public class RepresentacionDatos {
         return res;
     }
     
+    private void validacionDatos(int dato) {
+        if (dato < 0 || dato > 4) {
+            throw new RuntimeException("El valor que se ingresó no esta definido en el programa");
+        }
+    }
+    
     public double byteBit(double bytes) {
         return bytes*8;
     }
     
     public double bitByte(double bits) {
         return bits/8;
+    }
+    
+    public double conBits(double bits, int dato1, int dato2) {
+        return conversionDecimal(bits, dato1, dato2);
     }
 }
