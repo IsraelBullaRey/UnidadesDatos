@@ -100,8 +100,8 @@ public class UnidadesDatosController {
     
     @FXML
     void conBinarioBits(ActionEvent event) {
-        String [] choices1 = {"B","KiB","MiB","GiB","TiB"};
-        String [] choices2 = {"b","Kb","Mb","Gb","Tb"};
+        String [] choices1 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
+        String [] choices2 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema binario a sistema de bits");
@@ -156,7 +156,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conBinarioBits(num, u1, u2);
@@ -169,7 +169,7 @@ public class UnidadesDatosController {
 
     @FXML
     void conBinarioBytes(ActionEvent event) {
-        String [] choices1 = {"B","KiB","MiB","GiB","TiB"};
+        String [] choices1 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema binario a bytes");
@@ -220,7 +220,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conDatoBinarioByte(num, u1);
                 alertInformation("El valor nuevo es: " + valorNuevo + " B");
@@ -232,8 +232,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conBinarioDecimal(ActionEvent event) {
-        String [] choices1 = {"B","KiB","MiB","GiB","TiB"};
-        String [] choices2 = {"B","KB","MB","GB","TB"};
+        String [] choices1 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
+        String [] choices2 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema binario a sistema decimal");
@@ -288,7 +288,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conBinaDeci(num, u1, u2);
@@ -301,8 +301,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conBitsBinario(ActionEvent event) {
-        String [] choices1 = {"b","Kb","Mb","Gb","Tb"};
-        String [] choices2 = {"B","KiB","MiB","GiB","TiB"};
+        String [] choices1 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
+        String [] choices2 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema de bits a sistema binario");
@@ -357,7 +357,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conBitsBinario(num, u1, u2);
@@ -370,8 +370,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conBitsDecimal(ActionEvent event) {
-        String [] choices1 = {"b","Kb","Mb","Gb","Tb"};
-        String [] choices2 = {"B","KB","MB","GB","TB"};
+        String [] choices1 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
+        String [] choices2 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema de bits a sistema decimal");
@@ -426,7 +426,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conBitsDecimal(num, u1, u2);
@@ -439,8 +439,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conBinario(ActionEvent event) {
-        String [] choices1 = {"B","KiB","MiB","GiB","TiB"};
-        String [] choices2 = {"B","KiB","MiB","GiB","TiB"};
+        String [] choices1 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
+        String [] choices2 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión dentro del sistema binario");
@@ -495,7 +495,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conversionBinaria(num, u1, u2);
@@ -508,8 +508,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conDecimal(ActionEvent event) {
-        String [] choices1 = {"B","KB","MB","GB","TB"};
-        String [] choices2 = {"B","KB","MB","GB","TB"};
+        String [] choices1 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
+        String [] choices2 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión dentro del sistema decimal");
@@ -564,7 +564,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conversionDecimal(num, u1, u2);
@@ -577,8 +577,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conDecimalBinario(ActionEvent event) {
-        String [] choices1 = {"B","KB","MB","GB","TB"};
-        String [] choices2 = {"B","KiB","MiB","GiB","TiB"};
+        String [] choices1 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
+        String [] choices2 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema decimal a sistema de bits");
@@ -633,7 +633,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conDeciBina(num, u1, u2);
@@ -646,8 +646,8 @@ public class UnidadesDatosController {
 
     @FXML
     void conDecimalBits(ActionEvent event) {
-        String [] choices1 = {"B","KB","MB","GB","TB"};
-        String [] choices2 = {"b","Kb","Mb","Gb","Tb"};
+        String [] choices1 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
+        String [] choices2 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema decimal a sistema de bits");
@@ -702,7 +702,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conDecimalBits(num, u1, u2);
@@ -715,7 +715,7 @@ public class UnidadesDatosController {
 
     @FXML
     void conDecimalBytes(ActionEvent event) {
-        String [] choices1 = {"B","KB","MB","GB","TB"};
+        String [] choices1 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión sistema decimal a bytes");
@@ -766,7 +766,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conDatoDecimalByte(num, u1);
                 alertInformation("El valor nuevo es: " + valorNuevo + " B");
@@ -778,8 +778,8 @@ public class UnidadesDatosController {
     
     @FXML
     void conBits(ActionEvent event) {
-        String [] choices1 = {"b","Kb","Mb","Gb","Tb"};
-        String [] choices2 = {"b","Kb","Mb","Gb","Tb"};
+        String [] choices1 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
+        String [] choices2 = {"b","Kb","Mb","Gb","Tb","Pb","Eb","Zb","Yb"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión dentro del sistema de bits");
@@ -834,7 +834,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 int u2 = nuevo.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conBits(num, u1, u2);
@@ -847,7 +847,7 @@ public class UnidadesDatosController {
     
     @FXML
     void conBytesBinario(ActionEvent event) {
-        String [] choices1 = {"B","KiB","MiB","GiB","TiB"};
+        String [] choices1 = {"B","KiB","MiB","GiB","TiB","PiB","EiB","ZiB","YiB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión de bytes a sistema binario");
@@ -898,7 +898,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conByteBinario(num, u1);
                 alertInformation("El valor nuevo es: " + valorNuevo + " " + actual.getSelectionModel().getSelectedItem());
@@ -910,7 +910,7 @@ public class UnidadesDatosController {
 
     @FXML
     void conBytesDecimal(ActionEvent event) {
-        String [] choices1 = {"B","KB","MB","GB","TB"};
+        String [] choices1 = {"B","KB","MB","GB","TB","PB","EB","ZB","YB"};
         
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Conversión de bytes a sistema decimal");
@@ -961,7 +961,7 @@ public class UnidadesDatosController {
         Optional<Pair<String, String>> result = dialog.showAndWait();
         try{
             if (result.isPresent()) {
-                double num = Integer.parseInt(valor.getText());
+                double num = Double.parseDouble(valor.getText());
                 int u1 = actual.getSelectionModel().getSelectedIndex();
                 double valorNuevo = r.conByteDecimal(num, u1);
                 alertInformation("El valor nuevo es: " + valorNuevo + " " + actual.getSelectionModel().getSelectedItem());

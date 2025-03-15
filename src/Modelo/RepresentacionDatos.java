@@ -126,7 +126,7 @@ public class RepresentacionDatos {
     }
     
     private void validacionDatos(int dato) {
-        if (dato < 0 || dato > 4) {
+        if (dato < 0 || dato > 8) {
             throw new RuntimeException("El valor que se ingresó no esta definido en el programa");
         }
     }
