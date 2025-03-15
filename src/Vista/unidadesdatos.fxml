@@ -163,7 +163,7 @@
                <GridPane.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </GridPane.margin></ImageView>
-            <TextArea editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" text="Este es un programa diseñado para convertir sistemas de unidades de datos (bytes o bits) entre sistema decimal (KB, MB, GB, TB) y sistema binario (KiB, MiB, GiB, TiB)." wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <TextArea editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" text="Este es un programa diseñado para convertir sistemas de unidades de datos (bytes o bits) entre sistema decimal (KB, MB, GB, TB, PB, EB, ZB, YB) y sistema binario (KiB, MiB, GiB, TiB, PiB, EiB, ZiB, YiB)." wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
